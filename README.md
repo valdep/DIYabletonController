@@ -19,6 +19,8 @@ Sections of the controller :
     * 1 fader
     * effect pots
 * 1 Lead
+    * 1 fader
+    * effect pots
 * 4 Other
     * 1 fader (volume of the track)
     * 3 effect pots
@@ -34,6 +36,8 @@ Sections of the controller :
 * The top of the case will be transparent (?)
 
 ### Other
+* [Bakelyte MF-AOX _Moog_ Style Knobs](https://fr.aliexpress.com/item/5Pcs-MF-A01-MF-A02-MF-A03-MF-A04-MF-A05-Potentiometer-Knob-WH118-WX050-Rotary/32863008984.html?spm=a2g0w.search0104.3.131.2e8f79f9ArqRCu&ws_ab_test=searchweb0_0,searchweb201602_5_10320_10152_10321_10065_10151_10344_10068_5722815_10342_10547_10343_10340_10341_5722915_5722615_10696_10194_10084_10083_10618_10304_10307_10306_10302_5722715_5711215_10059_308_100031_10103_10624_10623_10622_5711315_5722515_10621_10620_10814_10815,searchweb201603_25,ppcSwitch_4&algo_expid=3713f69c-d8db-470e-818c-062a083249c2-19&algo_pvid=3713f69c-d8db-470e-818c-062a083249c2&priceBeautifyAB=0)
+* 
 
 
 ### Microcontroller choice
@@ -49,11 +53,25 @@ The following Arduino boards are compatible with the library :
 
 Both have 20 I/Os, Micro seems to be more interesting main because of the size (and the format: can easely be plugged into a larger board thanks to connectors).
 
-### Passive components
+Moreover the library is bi-directionnal, thanks to _void sendMIDI(midiEventPacket_t event);_ you can send MIDI to the DAW and with _midiEventPacket_t read(void);_ you can receive MIDI from the DAW.
+
+### Electronic components
+
+__Active components__
+* [Opto-isolator 6N136]()
+* [NOT gate 74LS14 (?)]()
+* [Analog Multiplexer]()
+
 __Faders, potentiometers and push buttons__
 * [AlieExpress faders 75mm](https://fr.aliexpress.com/item/5-Pcs-75-MM-Double-B10K-Original-B10KX2-Behringer-Pot-Mixer-Fader/32860718454.html?spm=a2g0w.search0204.3.8.5b3e293fKfCkXj&ws_ab_test=searchweb0_0,searchweb201602_5_10320_10152_10321_10065_10151_10344_10068_5722815_10342_10547_10343_10340_10341_5722915_5722615_10696_10194_10084_10083_10618_10304_10307_10306_10302_5722715_5711215_10059_308_100031_10103_10624_10623_10622_5711315_5722515_10621_10620_10814_10815,searchweb201603_1,ppcSwitch_5_ppcChannel&algo_expid=a4f2b774-d9a6-4d71-8f13-5fea60cd70fc-0&algo_pvid=a4f2b774-d9a6-4d71-8f13-5fea60cd70fc&transAbTest=ae803_1&priceBeautifyAB=0)
 * [Farnell RK09 potentiometers](http://fr.farnell.com/alps/rk09k1130ah1/potentiometre-rotatif-10k-17mm/dp/1191725?MER=bn_browse_1TP_MostPopular_2)
 * [AlieExpress Push Buttons 10 mm](https://fr.aliexpress.com/item/6pcs-self-reset-Push-Button-Switch-10mm-Self-Return-Momentary-Push-Button-Switch/32814986667.html?spm=a2g0w.search0204.3.237.330e1fdfPRSZHA&ws_ab_test=searchweb0_0,searchweb201602_5_10320_10152_10321_10065_10151_10344_10068_5722815_10342_10547_10343_10340_10341_5722915_5722615_10696_10194_10084_10083_10618_10304_10307_10306_10302_5722715_5711215_10059_308_100031_10103_10624_10623_10622_5711315_5722515_10621_10620_10814_10815,searchweb201603_1,ppcSwitch_5_ppcChannel&algo_expid=ddd49a58-e49d-4ea7-9a1c-c16a629be649-0&algo_pvid=ddd49a58-e49d-4ea7-9a1c-c16a629be649&transAbTest=ae803_1&priceBeautifyAB=0)
 
+__Connectors__
+* [MIDI connector](https://fr.aliexpress.com/item/20pcs-4P-5P-6P-7P-8P-DIN-S-Terminal-Connector-Midi-Cable-Lead-Audio-Plug-Female/32843864182.html?spm=a2g0w.search0104.3.71.1b6222dfTU29ua&ws_ab_test=searchweb0_0,searchweb201602_5_10320_10152_10321_10065_10151_10344_10068_5722815_10342_10547_10343_10340_10341_5722915_5722615_10696_10194_10084_10083_10618_10304_10307_10306_10302_5722715_5711215_10059_308_100031_10103_10624_10623_10622_5711315_5722515_10621_10620_10814_10815,searchweb201603_25,ppcSwitch_4&algo_expid=f8774b94-0b66-4360-afd0-9cbdfbefd872-10&algo_pvid=f8774b94-0b66-4360-afd0-9cbdfbefd872&priceBeautifyAB=0)
+* [USB type B connector]()
+* [Ribbon cable connectors (10 wires ?)]()
+
 ## Further development
 
+* The controller will feature several MIDI Thru outputs. These outputs will be completely derived from the MIDI input, this feature consists only of hardware. Most schematics includes an opto-isolator in order to isolate the signal comming from the MIDI in and NOT logic gates that are used has buffer for MIDI Thru outputs.
