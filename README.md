@@ -76,4 +76,5 @@ __Connectors__
 
 ## Further development
 
-* The controller will feature several MIDI Thru outputs. These outputs will be completely derived from the MIDI input, this feature consists only of hardware. Most schematics includes an opto-isolator in order to isolate the signal comming from the MIDI in and NOT logic gates that are used has buffer for MIDI Thru outputs.
+* The controller will feature several MIDI Thru outputs. These outputs will be completely derived from the MIDI input, this feature consists only of hardware. Most schematics includes an opto-isolator in order to isolate the signal comming from the MIDI in and NOT logic gates that are used has buffer for MIDI Thru outputs. An exemple of Midi Thru : [midi thru box](https://moroccodave.com/2017/10/04/diy-midi-thru-box-version-2/)
+* The controller will feature an input for plug in a footswitch. For exemple some commands will be trigger by this footswitch.
