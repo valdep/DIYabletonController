@@ -2,6 +2,32 @@
 
 The idea is to develop a custom Ableton Live controller that fits personnal needs. The main purpose is to use the final device in an electronic music live context.
 
+## Project news
+
+__06/08/2018 :__
+* Some pictures of the 3D model of the controller have been added to the 'Images' directory
+
+## TODO
+
+__Electronic :__
+* Design the analog signal path through 4051 multiplexers
+* Start the schematic and the mapping of all the analog inputs for the microcontroller
+* Draw the PCB of the schematic created above
+* Realize and test the circuit
+
+__Programming :__
+* Start the firmware design with the MIDI controller code from Evan Kale (it uses the MIDIusb library and some analog inputs)
+* Test and debug the software with the hardware
+
+__Mechanical :__
+* Design the MIDI Thru and USB panel and integrate it to the project
+* Maybe think about adding the side panels of the controller directly to the top decks. It will make it easier to do the assembly in the future
+* Send the 2 decks to 3D impression
+* To the assembly
+
+__Other :__
+* Order the different parts of the controller on AliExpress
+
 ## Inspiration
 * [Apollo 13 DIY controller](https://adamdzak.blogspot.de/2012/07/introducingapollo-13.html)
 * [Evan Kale 3d print controller](https://www.youtube.com/watch?v=4sopfrr1830)
