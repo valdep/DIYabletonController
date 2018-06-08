@@ -36,21 +36,25 @@ __Other :__
 
 ## General design
 Sections of the controller :
-* 1 Drums
-    * faders
-    *  effect pots
-* 1 Percussion
-    * 1 fader
-    * 3 effect pots
+* 1 Drums/Percussion
+    * 1 faders
+    * 12 effect pots
 * 1 Bass
     * 1 fader
-    * effect pots
-* 1 Lead
-    * 1 fader
-    * effect pots
-* 4 Other
-    * 1 fader (volume of the track)
-    * 3 effect pots
+    * 8 effect pots
+* 2 Lead
+    * 1 fader for each
+    * 3 effect pots for each
+* 1 "DJ" Deck
+    * 4 faders (1 for each audio stem)
+    * 12 effect pots (3 for each stems)
+* 1 Main
+    * 1 fader (general volume)
+    * 10 effect pots (for EQing, delay, reverb etc ....)
+
+__Total :__
+* 9 faders
+* 48 potentiometers
 
 ### Electronic requirements
 * Each track must have 4,8 or 16 analog components. this will help the regroupment of tracks for multiplexing the analog signals.
@@ -58,15 +62,13 @@ Sections of the controller :
 
 ### Casing
 * The top of the controller will be printed with a 3d printer.
-* The 3d printer can print 200 x 200mm objects. The maximum size of the controller will be 400 x 200mm (2 panels). 
+* The 3d printer can print 200 x 200mm objects. The maximum size of the controller will be 400 x 200mm (2 panels).
 * Other parts like PCB supports will be printed with the same printer.
 * The rest of the case will be made of wood (?)
 * The top of the case will be transparent (?)
 
 ### Other
-* [Bakelyte MF-AOX _Moog Style_ Knobs](https://fr.aliexpress.com/item/5Pcs-MF-A01-MF-A02-MF-A03-MF-A04-MF-A05-Potentiometer-Knob-WH118-WX050-Rotary/32863008984.html?spm=a2g0w.search0104.3.131.2e8f79f9ArqRCu&ws_ab_test=searchweb0_0,searchweb201602_5_10320_10152_10321_10065_10151_10344_10068_5722815_10342_10547_10343_10340_10341_5722915_5722615_10696_10194_10084_10083_10618_10304_10307_10306_10302_5722715_5711215_10059_308_100031_10103_10624_10623_10622_5711315_5722515_10621_10620_10814_10815,searchweb201603_25,ppcSwitch_4&algo_expid=3713f69c-d8db-470e-818c-062a083249c2-19&algo_pvid=3713f69c-d8db-470e-818c-062a083249c2&priceBeautifyAB=0)
-* 
-
+* [Bakelyte MF-AOX _Moog Style_ Knobs](https://fr.aliexpress.com/item/5Pcs-MF-A01-MF-A02-MF-A03-MF-A04-MF-A05-Potentiometer-Knob-WH118-WX050-Rotary/32863008984.html?spm=a2g0w.search0104.3.131.2e8f79f9ArqRCu&ws_ab_test=searchweb0_0,searchweb201602_5_10320_10152_10321_10065_10151_10344_10068_5722815_10342_10547_10343_10340_10341_5722915_5722615_10696_10194_10084_10083_10618_10304_10307_10306_10302_5722715_5711215_10059_308_100031_10103_10624_10623_10622_5711315_5722515_10621_10620_10814_10815,searchweb201603_25,ppcSwitch_4&algo_expid=3713f69c-d8db-470e-818c-062a083249c2-19&algo_pvid=3713f69c-d8db-470e-818c-062a083249c2&priceBeautifyAB=0) (warning : no longer used)
 
 ### Microcontroller choice
 The microcontroller must be compatible with a MIDI over USB library. Since MIDI over USB is the main feature (the only one ?) this is the fastest and easiest way to develop the device.
@@ -82,6 +84,9 @@ The following Arduino boards are compatible with the library :
 Both have 20 I/Os, Micro seems to be more interesting main because of the size (and the format: can easely be plugged into a larger board thanks to connectors).
 
 Moreover the library is bi-directionnal, thanks to _void sendMIDI(midiEventPacket_t event);_ you can send MIDI to the DAW and with _midiEventPacket_t read(void);_ you can receive MIDI from the DAW.
+
+__Other libraries__ :
+Evan Kale built is own midi controller with the USB library from the "arcore" module (available on github). This library should be considered a good alternate way for archiving the project.
 
 ### Electronic components
 
